@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/pdf-lib.js"></script>
+    <title>Assinatura Digital</title>
+</head>
+<body>
+    <div class="signature-form">
+        <h1>Assinatura Digital</h1>
+        <p>AtecSeven Tecnologia <br> copyright © 2019. Todos os direitos reservados.</p>
+        <form id="signatureForm">
+            <label for="fileUpload">Selecione o documento:</label>
+            <input type="file" id="fileUpload" accept=".pdf" required>
+
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="signature">Assinatura:</label>
+            <canvas id="signaturePad" width="400" height="200"></canvas>
+            <button type="button" onclick="clearSignature()">Limpar</button>
+            
+            <input type="button" value="Salvar Assinatura e Documento" onclick="saveSignatureAndDocument()">
+        </form>
+        <div id="savedSignature">
+            <h2>Assinatura e Documento Salvos</h2>
+            <a id="downloadLink" href="#" download="documento-assinado.pdf">Baixar Documento Assinado</a>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+    <script src="js/pdf-lib"></script>
+</body>
+</html>
