@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="signature-form">
-        <h1>Assinatura Digital</h1>
+        <h3>Assinatura Digital</h3>
         <p>AtecSeven Tecnologia <br> copyright © 2019. Todos os direitos reservados.</p>
         <form id="signatureForm">
             <label for="fileUpload">Selecione o documento:</label>
@@ -19,7 +19,7 @@
             <input type="text" id="name" name="name" required>
 
             <label for="signature">Assinatura:</label>
-            <canvas id="signaturePad" width="400" height="200"></canvas>
+            <canvas id="signaturePad" width="400" height="90"></canvas>
             <button type="button" onclick="clearSignature()">Limpar</button>
             
             <input type="button" value="Salvar Assinatura e Documento" onclick="saveSignatureAndDocument()">
