@@ -1,28 +1,39 @@
+/* Estilos globais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     background: linear-gradient(to bottom, #00008B, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.signature-form {
-    max-width: 600px;
+/* Formulários */
+.signature-form, .login-form {
+    max-width: 90%;
     margin: 50px auto;
     padding: 20px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
     margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
 }
 
 input, button {
@@ -31,6 +42,7 @@ input, button {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
@@ -46,6 +58,8 @@ button:hover {
 canvas {
     border: 1px solid #ccc;
     margin-bottom: 10px;
+    width: 100%;
+    height: auto;
 }
 
 #savedSignature {
@@ -53,56 +67,21 @@ canvas {
     margin-top: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    background: linear-gradient(to bottom, #00008B, #000);
-}
-
-.login-form, .signature-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
 .error-message {
     color: red;
 }
-.logo{
+
+.logo {
     border-radius: 50%;
-    border-style: solid;
-    border: #f4f4f4;
+    border: 3px solid #f4f4f4;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+    .signature-form, .login-form {
+        max-width: 400px;
+    }
 }
