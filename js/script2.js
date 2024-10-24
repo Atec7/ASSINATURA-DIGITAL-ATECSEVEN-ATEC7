@@ -2,6 +2,13 @@ const canvas = document.getElementById('signaturePad');
 const ctx = canvas.getContext('2d');
 let drawing = false;
 
+// Configuração de dimensionamento do canvas para alta definição
+canvas.width = window.innerWidth * 2;
+canvas.height = window.innerHeight * 0.5 * 2;
+canvas.style.width = window.innerWidth + "px";
+canvas.style.height = window.innerHeight * 0.5 + "px";
+ctx.scale(2, 2);
+
 // Eventos para desktop
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mouseup', stopDrawing);
@@ -29,34 +36,36 @@ function stopDrawing() {
 
 function draw(e) {
     if (!drawing) return;
-    
+
     e.preventDefault(); // Prevenir ações padrão como rolagem
 
+    const rect = canvas.getBoundingClientRect();
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.strokeStyle = '#000';
 
-    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
 }
 
 function drawTouch(e) {
     if (!drawing) return;
-    
+
     e.preventDefault(); // Prevenir ações padrão como rolagem
 
+    const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
-    
+
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.strokeStyle = '#000';
 
-    ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+    ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+    ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
 }
 
 function clearSignature() {
